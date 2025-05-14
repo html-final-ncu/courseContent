@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程詳情</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .course-header {
+            color: black;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 30px 0;
+        }
+        .course-details {
+            background-color: #e9f0f9;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .rating {
+            text-align: center;
+            margin: auto;
+        }
+        .rating span {
+            display: inline-flex;
+            align-items: center;
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+        .rating img {
+            width: 25px;
+            margin-right: 5px;
+        }
+        .details-table {
+            margin: 10px 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            width: 100%;
+        
+        }
+        .details-table td {
+            padding: 6px 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+            white-space: nowrap; /* 保持其他欄位文字不換行 */
+        }
+
+        .details-table td[colspan="3"] {
+            word-wrap: break-word; /* 讓介紹欄文字過長時換行 */
+            max-width: 400px; /* 設定最大寬度，避免過長文字影響排版 */
+            white-space: normal; /* 允許換行 */
+        }
+        .details-table th, .details-table td {
+            padding: 6px 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+            white-space: nowrap;
+        }
+        .details-table th {
+            background-color: #e9f0f9;
+            color: #578cd2;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="course-header">資料庫管理</div>
+        <div class="course-details">
+            <div style="flex: 2;">
+                <table class="details-table">
+                    <tr><th>教授</th><td>柯士文</td><th>學分</th><td>3</td></tr>
+                    <tr><th>上課週數</th><td>18週</td><th>配分比重</th><td>平時30% 期中30% 期末40%</td></tr>
+                    <tr><th>開課系所</th><td>資訊管理系</td><th>類別</th><td>必修課</td></tr>
+                    <tr><th>課程目標</th><td colspan="3">培養資料庫管理系統開發能力</td></tr>
+                    <tr><th>介紹</th><td colspan="3">課程主題將著重於關聯式資料庫，課程中對於資料庫的分析與設計如關聯性建立、正規化、資料庫語言(SQL)等都會有討論，並透過實作資料庫的過程，以培養學生在實務方面應用的能力。此外，課程後段亦會介紹資料倉儲的概念，並大數據的相關資料庫技術。
+ </td></tr>
+                </table>
+            </div>
+            <div class="rating" style="flex: 1;">
+                <span>甜度：★★★★☆ 4</span><br>
+                <span>涼度：★★★☆☆ 3</span>
+            </div>
+        </div>
+    </div>
+    <div class="container comment-section">
+        <h2 class="mb-4">留言板</h2>
+        <div class="card mb-4">
+            <div class="card-body">
+                <form id="commentForm">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">你的名字</label>
+                        <input type="text" class="form-control" id="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="content" class="form-label">留言內容</label>
+                        <textarea class="form-control" id="content" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">送出留言</button>
+                </form>
+            </div>
+        </div>
+        <div id="commentsList">
+            <!-- 每則留言與回覆由JavaScript動態產生 -->
+        </div>
+    </div>
+    <script src="comment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
